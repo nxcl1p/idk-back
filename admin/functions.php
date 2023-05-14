@@ -29,3 +29,11 @@ function editProduct($id, $name, $price){
   $stmt -> execute();
   $stmt -> close();
 }
+
+function deleteProduct($id){
+  global $conn;
+  $stmt = $conn -> prepare("DELETE FROM products WHERE id = ?");
+  $stmt -> bind_param("i", $id);
+  $stmt -> execute();
+  $stmt -> close();
+}

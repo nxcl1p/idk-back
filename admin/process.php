@@ -16,9 +16,18 @@ switch ($action) {
       echo "Ошибка при загрузке файла.";
     }
     break;
+  case 'edit':
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    editProduct($id, $name, $price);
+    break;
+  case 'delete':
+    $id = $_POST['id'];
+    deleteProduct($id);
+    break;
   default:
     die("Invalid action");
 }
-
 exit();
 
