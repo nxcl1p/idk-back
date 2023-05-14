@@ -29,5 +29,7 @@ switch ($action) {
   default:
     die("Invalid action");
 }
+
+header('Location: ../index_user.php');
 exit();
 

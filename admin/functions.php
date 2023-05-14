@@ -37,3 +37,14 @@ function deleteProduct($id){
   $stmt -> execute();
   $stmt -> close();
 }
+
+function getProducts()
+{
+  global $conn;
+  $result = $conn->query("SELECT * FROM products");
+  $products = [];
+  while ($row = $result->fetch_assoc()) {
+    $products[] = $row;
+  }
+  return $products;
+}
