@@ -30,7 +30,7 @@ default:
 	die("Invalid action");
 }
 
-header('Location: ../index_user.php');
+header('Location: ../index.php');
 exit();
 
 
