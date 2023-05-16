@@ -10,6 +10,8 @@ if (!empty($_POST)){
         header("Location: admin/admin.php");
     }elseif ($login == 'guest' && $pass == 'guest'){
         header("Location: user_main.php");
+    }else{
+        die("wrong login information");
     }
 }
 ?>
