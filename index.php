@@ -18,7 +18,23 @@ $products = getProducts();
 
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="mb-3 mt-3 col-md-3">
+			<div class="mb-3 mt-3 col-md-4">
+				<?
+				if (!empty($_POST)) {
+					$query = mysqli_query($conn, "SELECT * FROM users");
+					$res = mysqli_fetch_array($query, MYSQLI_ASSOC);
+					extract($_POST);
+
+					if ($res['name'] == $name && $res['password'] == $password) {
+						header('Location: user.php');
+						if ($res['isAdmin'] == true) {
+							header('Location: admin/admin.php');
+						}
+					} else {
+						echo "<div class='alert alert-danger'>Username or password is incorrect</div>";
+					}
+				}
+				?>
 				<form action="index.php" class="login-form" method="post">
 					<label for="name">Login</label>
 					<input type="text" name="name" class="form-control mb-3" id="login_name">
@@ -34,9 +50,3 @@ $products = getProducts();
 </body>
 
 </html>
-
-<?php
-
-
-
-?>
