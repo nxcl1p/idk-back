@@ -22,7 +22,7 @@ $products = getProducts();
 				<div class="card" style="width: 18rem;">
 					<img src="<?php echo $product['image'] ?>" class="card-img-top" alt="img" style="max-width: 100px">
 					<div class="card-body">
-						<h5 class="card-title"><?php echo $product['name'] ?>></h5>
+						<h5 class="card-title"><?php echo $product['name'] ?></h5>
 						<p class="card-text">Price: <?php echo $product['price'] ?></p>
 					</div>
 				</div>
