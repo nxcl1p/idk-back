@@ -1,6 +1,12 @@
 <?php
 require_once 'functions.php';
 error_reporting(-1);
+
+if (isset($_GET['logout'])) {
+	session_destroy();
+	header('Location: ../index.php');
+	exit;
+}
 ?>
 
 <!DOCTYPE html>
