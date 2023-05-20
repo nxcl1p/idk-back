@@ -26,16 +26,13 @@ $products = getProducts();
 					extract($_POST);
 
 					if ($res['name'] == $name && $res['password'] == $password) {
-						$_SESSION['user'] = $name;
 						if ($res['isAdmin'] == true) {
-							$_SESSION['isAdmin'] = true;
 							header('Location: admin/admin.php');
-						} else {
-							header('Location: user.php');
+						} elseif ($res['name'] == $name && $res['password'] == $password) {
+							if ($res['isAdmin'] == false) {
+								header('Location: user.php');
+							}
 						}
-						exit;
-					} else {
-						echo "<div class='alert alert-danger'>Username or password is incorrect</div>";
 					}
 				} ?>
 				<form action="index.php" class="login-form" method="post">

@@ -19,8 +19,8 @@ $products = getProducts();
 	<div class="container">
 		<div class="row">
 			<?php foreach ($products as $product) : ?>
-				<div class="card me-4 mb-4" style="width: 18rem; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
-					<img src="<?php echo $product['image'] ?>" class="card-img-top" alt="img" style="max-width: 18rem">
+				<div class="card me-4 mb-4" style="width: 12rem; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+					<img src="<?php echo $product['image'] ?>" class="card-img-top" alt="img" style="max-width: 12rem">
 					<div class="card-body">
 						<h5 class="card-title"><?php echo $product['name'] ?></h5>
 						<p class="card-text">Price: <?php echo $product['price'] ?></p>
