@@ -15,7 +15,7 @@ $products = getProducts();
 	<title>Login</title>
 </head>
 
-<body>
+<body class="text-bg-dark">
 
 	<div class="container">
 		<div class="row justify-content-center">
@@ -30,6 +30,8 @@ $products = getProducts();
 						if ($res['isAdmin'] == true) {
 							header('Location: user.php');
 						}
+					} else {
+						echo '<div class = "alert alert-danger">Invalid Username or Password</div>';
 					}
 				} ?>
 				<form action="index.php" class="login-form" method="post">
@@ -37,7 +39,9 @@ $products = getProducts();
 					<input type="text" name="name" class="form-control mb-3" id="login_name">
 					<label for="password">Password</label>
 					<input type="password" name="password" class="form-control mb-3" id="login_password">
-					<button class="btn btn-primary" type="submit">Login</button>
+					<div class="d-flex justify-content-center">
+						<button class="btn btn-primary col-4" type="submit">Login</button>
+					</div>
 				</form>
 			</div>
 		</div>

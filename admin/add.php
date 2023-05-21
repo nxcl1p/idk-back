@@ -10,66 +10,35 @@ error_reporting(-1);
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-		button {
-			padding: 10px 20px;
-			font-size: 16px;
-			border: 1px solid #ccc;
-			border-radius: 5px;
-		}
-
-		.forms_wrapper {
-			font-family: Arial, serif;
-		}
-
-		form {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-
-		h3 {
-			text-align: center;
-			font-size: 32px;
-		}
-
-		form label {
-			margin-bottom: 10px;
-			font-weight: bold;
-			font-size: 21px;
-		}
-
-		form input:focus {
-			outline: 0;
-		}
-
-		form input {
-			width: 100%;
-			max-width: 300px;
-			margin-bottom: 10px;
-			padding: 10px;
-			border: 1px solid #ccc;
-			border-radius: 5px;
-			font-size: 16px;
-		}
-	</style>
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 	<title>Admin</title>
 </head>
 
-<body>
+<body class="text-bg-dark">
 	<div class="forms_wrapper">
 		<!-- Add -->
-		<h3>Add product</h3>
-		<form action="process.php" method="post" enctype="multipart/form-data" autocomplete="off">
-			<input type="hidden" value="add" name="action">
-			<label for="image">Add Image</label>
-			<input type="file" name="image" id="image">
-			<label for="name">Product Name</label>
-			<input type="text" name="name" placeholder="Product Name" id="name">
-			<label for="price">Product Price</label>
-			<input type="number" name="price" placeholder="Product Price" id="price">
-			<button type="submit">Submit</button>
-		</form>
-		<br>
+		<div class="container">
+			<div class="row justify-content-center align-items-center">
+				<div class="col-md-4 mb-3 mt-3">
+					<h1>Add product</h1>
+					<form action="process.php" method="post" enctype="multipart/form-data" autocomplete="off">
+						<input type="hidden" value="add" name="action">
+						<label for="image">Add Image</label>
+						<input type="file" name="image" id="image" class="form-control">
+						<label for="name">Product Name</label>
+						<input type="text" class="form-control" name="name" placeholder="Product Name" id="name">
+						<label for="price">Product Price</label>
+						<input type="number" name="price" class="form-control" placeholder="Product Price" id="price">
+						<div class="d-flex justify-content-center mt-3">
+							<button class="btn btn-primary col-4" type="submit">Submit</button>
+						</div>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
 
 </html>

@@ -56,7 +56,6 @@ function getProducts()
 function getProductById()
 {
 	$id = $_GET['id'];
-	var_dump('func id: ' . $id);
 	global $conn;
 	$result = $conn->query("SELECT * FROM products WHERE id = $id");
 	$products = [];
