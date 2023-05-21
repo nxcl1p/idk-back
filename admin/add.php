@@ -1,12 +1,6 @@
 <?php
 require_once 'functions.php';
 error_reporting(-1);
-
-if (isset($_GET['logout'])) {
-	session_destroy();
-	header('Location: ../index.php');
-	exit;
-}
 ?>
 
 <!DOCTYPE html>
@@ -77,30 +71,5 @@ if (isset($_GET['logout'])) {
 			<button type="submit">Submit</button>
 		</form>
 		<br>
-
-		<!-- Edit -->
-		<h3>Edit product</h3>
-		<form action="process.php" method="post" autocomplete="off">
-			<input type="hidden" name="action" value="edit">
-			<label for="update_id">Product ID:</label>
-			<input type="number" name="id" id="update_id">
-			<label for="update_name">Name:</label>
-			<input type="text" name="name" id="update_name">
-			<label for="update_price">Price:</label>
-			<input type="number" name="price" id="update_price">
-			<button type="submit">Edit Product</button>
-		</form>
-		<br>
-
-		<!-- Delete -->
-		<h3>Delete product</h3>
-		<form action="process.php" method="post" autocomplete="off">
-			<input type="hidden" name="action" value="delete">
-			<label for="id">Product ID:</label>
-			<input type="number" name="id" id="id">
-			<button type="submit">Delete Product</button>
-		</form>
-	</div>
-</body>
 
 </html>

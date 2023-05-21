@@ -52,3 +52,16 @@ function getProducts()
 	}
 	return $products;
 }
+
+function getProductById()
+{
+	$id = $_GET['id'];
+	var_dump('func id: ' . $id);
+	global $conn;
+	$result = $conn->query("SELECT * FROM products WHERE id = $id");
+	$products = [];
+	while ($row = $result->fetch_assoc()) {
+		$products[] = $row;
+	}
+	return $products;
+}

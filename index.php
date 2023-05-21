@@ -8,7 +8,8 @@ $products = getProducts();
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<title>Login</title>
@@ -27,11 +28,7 @@ $products = getProducts();
 
 					if ($res['name'] == $name && $res['password'] == $password) {
 						if ($res['isAdmin'] == true) {
-							header('Location: admin/admin.php');
-						} elseif ($res['name'] == $name && $res['password'] == $password) {
-							if ($res['isAdmin'] == false) {
-								header('Location: user.php');
-							}
+							header('Location: user.php');
 						}
 					}
 				} ?>
