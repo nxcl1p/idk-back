@@ -1,3 +1,3 @@
 # idk-back
-some shitty backend
+some pet-project backend
 
